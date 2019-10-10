@@ -52,8 +52,8 @@ public class Tríangulo{
      * @return cadena con instrucciones para el tríangulo
      */
     public String toSVG(){
-        String tosvg = "<polygon points= '"+this.a.getx()+","+this.a.gety()+" "+this.b.getx()+","+this.b.gety()+" "+this.c.getx()+","+this.c.gety()+"' stroke='yellow' stoke-width='2' fill='lime'/>";
-        return tosvg;
+        String tri="< polygon points= '"+this.a.getx()+","+this.a.gety()+" "+this.b.getx()+","+this.b.gety()+" "+this.c.getx()+","+this.c.gety()+"' />";
+        return tri;
     }
     /**
      * Método que nos muestra los puntos del tríangulo
