@@ -1,7 +1,11 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 public class Control{
-
+/**
+ * Método que verifica si una palabra es palindromo
+ * @param palindromo es una cadena donde se guarda la palabra 
+ * @return true si la palabra es palindromo y false si la palabra no es palindromo
+ */
     public static boolean problema1(String palindromo){
         palindromo = palindromo.toLowerCase();
         palindromo = palindromo.replaceAll(" ", "");
@@ -17,6 +21,12 @@ public class Control{
         
         return true;
     }
+    /**
+     * Método que verifica si dentro del arreglo hay dos números que sumen un número dado
+     * @param ar arreglo de números
+     * @param n número que puede ser la suma de dos números del arreglo   
+     * @return true si en el arreglo hay dos números que sumados dan el número n 
+     */
     public static boolean problema2(int[] ar, int n){
         for(int i=0;i<ar.length; i++){
             int a =ar[i];
@@ -29,7 +39,10 @@ public class Control{
         }
     return false;
     } 
-
+/**
+ * Método que ordena un arreglo de mayor a menor
+ * @param p3 arreglo de números
+ */
     public static void problema3(int [] p3){
         int aux;
         int aux2;
@@ -41,12 +54,17 @@ public class Control{
                  aux2=p3[j];
                 p3[i]=aux2;
                 p3[j]=aux;
-                System.out.println(ord);
                 }
             }
      
         }
     }
+    /**
+     * Método que busca un número n en un arreglo de números 
+     * @param p4 arreglo de números 
+     * @param n número n 
+     * @return
+     */
     public static boolean problema4(int[] p4, int n){
         for(int i=0;i<p4.length; i++){
             int ar=p4[i];
@@ -56,7 +74,11 @@ public class Control{
         }
         return false;
     }
-    
+    /**
+     * Método que verifica si un número n es primo 
+     * @param n número 
+     * @return true si el número es primo y false si el número es compuesto 
+     */
     public static boolean problema5(int n){
         for(int i=3;i<n; i++){
             if(n%i==0){
@@ -65,18 +87,35 @@ public class Control{
         }
         return true;
     }
-    /*public static int[] problema6(int n){
-        int[0]=2;   
-        aux=1;
+    /**
+     * Método que regresa un arreglo con los número primos anteriores a un número n
+     * @param n número n
+     * @return arreglo con los números primos anterores a n 
+     */
+    public static int[] problema6(int n){
+        ArrayList<Integer> ar= new ArrayList<>();
         for(int i=2;i<n;i++){
-            for(int j=3;j<i;j++){
-                if(i%j!=0){
-                    int[aux]=j;
-                    aux++;
+            for(int j=3;j<n;j++){
+                if(n%j!=0){
+                    ar.add(n);  
                 }
         }
         }
-    }*/
+        return aux(ar);
+    }
+    /**
+     * Método auxiliar que asigna números primos a una lista de arreglos
+     * @param primos lista de arreglos
+     * @returnun arreglo con números primos 
+     */
+    public static int[] aux(ArrayList<Integer> primos){
+        int[] a = new int[primos.size()];
+        for(int f=0;f < primos.size(); f++){
+            a[f]= primos.get(f);
+        } 
+        return a;
+    }
+
     /*public static void main(String[] args) {
         String palinFalse = "batman";
         String palinTrue = "Anita lava la tina";
@@ -101,7 +140,7 @@ public class Control{
         if(Arrays.equals(desordenado,ordenado) == true)resultado+="P3 bien\n";else resultado+="P3 mal\n";
         if(problema4(desordenado,2)== true && problema4(desordenado,18)== false)resultado+="P4 bien\n";else resultado+="P4 mal\n";
         if(problema5(7)==true && problema5(6)==false)resultado+="P5 bien\n";else resultado+="P5 mal\n";
-        //if(Arrays.equals(problema6(10), primos10) == true)resultado+="P6 bien\n";else resultado+="P6 mal\n";
+        if(Arrays.equals(problema6(10), primos10) == true)resultado+="P6 bien\n";else resultado+="P6 mal\n";
         System.out.println(resultado);   
     }
 }
