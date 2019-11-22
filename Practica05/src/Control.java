@@ -45,18 +45,14 @@ public class Control{
  */
     public static void problema3(int [] p3){
         int aux;
-        int aux2;
-        for(int i=0;i<p3.length; i++){
-            int ord = p3[i];
-            for(int j=0;j<p3.length; j++){
-                if(ord>p3[j]){
-                 aux=p3[i];   
-                 aux2=p3[j];
-                p3[i]=aux2;
-                p3[j]=aux;
+        for(int i=0;i<p3.length-1; i++){
+            for(int j=0;j<p3.length-1; j++){
+                if(p3[j]>p3[j+1]){
+                    aux=p3[j];   
+                    p3[j]=p3[j+1];
+                    p3[j+1]=aux;
                 }
             }
-     
         }
     }
     /**
@@ -115,7 +111,7 @@ public class Control{
         } 
         return a;
     }
-
+     //método main implementado para ver un poco más el funcionamiento de los palindromos  
     /*public static void main(String[] args) {
         String palinFalse = "batman";
         String palinTrue = "Anita lava la tina";
@@ -129,6 +125,10 @@ public class Control{
         int [] arreglo ={3,9,3,2,6};
         System.out.println("problema3"+problema3(arreglo));
     }*/
+    /**
+     * @author iabin
+     * Método main que evalua los 6 problemas de la práctica05
+     */
     public static void main(String[] args) {
         String resultado = "";
         int[] desordenado = {9,8,7,6,5,4,3,2,1};
